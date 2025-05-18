@@ -1,0 +1,180 @@
+/* File: /index.css */
+:root {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+
+[hidden] {
+	display: none !important;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+	height: 100vh;
+	width: 100vw;
+	overflow-y: auto;
+}
+.container {
+	height: 100%;
+	width: 100%;
+	font-size: 2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	img {
+		width: 20%;
+	}
+	.text-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1em;
+		.credentials {
+			font-family: monospace;
+			display: flex;
+			flex-direction: column;
+			gap: 0.5em;
+			justify-content: center;
+			align-items: center;
+			font-size: 1rem;
+			.lastParagraph {
+				font-size: 1.5rem;
+				margin-top: 2rem
+			}
+			a{
+				color: #008000;
+				text-decoration: underline;
+				cursor: pointer;
+				&:hover {
+					color: #006400;
+				}
+			}
+		}
+		.copyWrapper {
+			position: relative;
+			display: inline-block;
+			.copyMailBtn {
+				padding: 0.5em 1em;
+				background-color: #008000;
+				color: white;
+				border: none;
+				border-radius: 0.5em;
+				cursor: pointer;
+				transition: background-color 0.2s;
+				&:hover {
+					background-color: #006400;
+				}
+			}
+		}
+		
+		.copyFeedback {
+			position: absolute;
+			left: 110%; /* etwas rechts neben dem Button */
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 0.8em;
+			color: green;
+			white-space: nowrap;
+			pointer-events: none;
+			opacity: 0;
+			transition: opacity 0.2s;
+		}
+	}
+}
+
+.skills-list {
+	list-style: none;
+	padding: 0;
+	font-family: monospace;
+	font-size: 1.4rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+	align-items: center;
+}
+.lower-list {
+	margin-bottom: 2rem;
+}
+
+.skills-list li {
+	transition: letter-spacing 0.2s, color 0.2s;
+	letter-spacing: 0.03em;
+	cursor: pointer;
+	position: relative;
+	color: inherit;
+}
+
+.skills-list li:not(.skills-separator):hover {
+	letter-spacing: 0.15em;
+	color: #008000;
+}
+
+.skills-separator {
+	border: none;
+	border-bottom: 1.5px solid #888;
+	width: 20%;
+	margin: 0.7em auto;
+}
+
+.policy-links-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+	
+}
+
+.impressum-link {
+	display: inline-block;
+	margin-top: 0.5em;
+	color: #008000;
+	text-decoration: underline;
+	cursor: pointer;
+	font-size: 1rem;
+	transition: color 0.2s;
+}
+.impressum-link:hover,
+.impressum-link:focus {
+	color: #006400;
+	text-decoration: none;
+}
+
+.modal-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0,0,0,0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 200;
+}
+
+.modal-content {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	background: #fff;
+	padding: 2em 1.5em;
+	border-radius: 8px;
+	max-width: 400px;
+	width: 90vw;
+	box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+	position: relative;
+}
+
+.modal-close {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	background: transparent;
+	border: none;
+	font-size: 1.5em;
+	color: #666;
+	cursor: pointer;
+}
